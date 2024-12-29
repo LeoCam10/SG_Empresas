@@ -22,7 +22,7 @@ class Ventana_inicio_sesion(QMainWindow):
         self.label_bomberos.setScaledContents(True)
      
         
-        self.label_bienvenido = QLabel('¡Te damos la bienvenid@!')
+        self.label_bienvenido = QLabel('¡Te damos la bienvenida!')
         self.label_bienvenido.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.label_bienvenido.setStyleSheet("color :#050200; font-size : 30px ;margin: 0px; padding: 0px  ")
         self.label_bienvenido.setFixedHeight(50)
