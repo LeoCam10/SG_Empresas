@@ -2,9 +2,11 @@ from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
 
+import Controlador.controlador_ventana_principal
+
 
 class Ventana_Principal(QMainWindow):
-    def __init__(self, nombre):
+    def __init__(self,controlador,nombre):
         super().__init__()
         self.nombre = nombre
         self.setWindowTitle('Ventana Principal')
@@ -44,6 +46,7 @@ class Ventana_Principal(QMainWindow):
         self.label_horizonta_arriba_4.setFixedSize(60,50)
         self.imagen_horizonta_arriba_4 = QPixmap((r"C:\Users\camus\Desktop\SG_Empresas-main\Visual\Imagenes\salir")).scaled(QSize(58,48))
         self.label_horizonta_arriba_4.setStyleSheet(""" QPushButton:hover {  border: 3px solid blue}  """)
+        #self.label_horizonta_arriba_4.clicked.connect(Controlador.controlador_ventana_principal.Controlar_ventana_principal.cerrar_sesion(self))
         self.label_horizonta_arriba_4.setIcon(QIcon(self.imagen_horizonta_arriba_4))
         self.label_horizonta_arriba_4.setIconSize(self.label_horizonta_arriba_4.size())
     
@@ -212,7 +215,3 @@ class Ventana_Principal(QMainWindow):
         #############################
         
            
-app = QApplication([])
-window = Ventana_Principal('Leonardo')
-window.show()
-app.exec()

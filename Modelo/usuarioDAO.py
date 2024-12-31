@@ -1,5 +1,6 @@
 import sys
-sys.path.append('C://Users//camus//Desktop//SG_Empresas-main//Modelo')
+sys.path.append(r"C:\Users\camus\Desktop\SG_Empresas-main\Visual")
+sys.path.append(r"C:\Users\camus\Desktop\SG_Empresas-main\Modelo")
 from base_de_datos import BaseDeDatos
 
 
@@ -32,12 +33,18 @@ class UsuarioDAO:
         self.base.consulta(consulta, valores)
         print(f"Se modificaron los datos del usuario con el dni {dni_personal}")
     
-    def obtener_personal(self, dni_personal):
+    def obtener_personal_dni(self, dni_personal):
         consulta = '''SELECT * FROM public."personal" WHERE dni_personal = %s;'''
         valores = (dni_personal,)
         resultado = self.base.obtener_un_elemento(consulta,valores)
         print(f'los datos del usuario {dni_personal}')
         print(resultado)
+        
+    def obtener_personal_usuario(self, usuario):
+        consulta = '''SELECT * FROM public."personal" WHERE usuario = %s;'''
+        valores = (usuario,)
+        return self.base.obtener_un_elemento(consulta,valores)
+        
         
     def obtener_todo_personal(self,valores = None):
         consulta = '''SELECT * FROM public."personal"''' 
@@ -49,12 +56,22 @@ class UsuarioDAO:
         consulta = '''SELECT usuario, contrasena FROM public."personal" WHERE usuario = %s;''' 
         valores = (usuario,)
         resultado = self.base.obtener_un_elemento(consulta, valores)
+        print(f'devuelve el resultado {resultado}')
+        print(resultado[1])
+        print(contrasena)
         if resultado[1] == contrasena:
-            print('Ingreso valido')
+          
+            return True
+            
         else:
-            print('Ingreso invalido')
+            
+            return False
         
-           
+       
 objeto = UsuarioDAO()
-objeto.login_usuario('leocam10','sipa2025')
+print(objeto.login_usuario('leocam10','sipa2025'))
+result = objeto.obtener_personal_usuario('leocam10')
+print(result)
+print(result[3])
+
 

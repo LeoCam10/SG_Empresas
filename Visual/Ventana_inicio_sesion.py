@@ -4,10 +4,11 @@ from PyQt6.QtWidgets import *
 
 
 
+
 class Ventana_inicio_sesion(QMainWindow):
-    def __init__(self,controlador=None):
+    def __init__(self,controlador):
         super().__init__()
-        self.controlador = controlador
+        
         
         self.setWindowTitle("Estacion de Salvamento, Incedio y Proteccion Ambiental CRIV")
         self.setFixedSize(1200,600)
@@ -32,7 +33,7 @@ class Ventana_inicio_sesion(QMainWindow):
         self.label_usuario.setStyleSheet("color :#a9a7a7; font-size : 25px ;margin: 0px; padding: 0px")
         self.label_usuario.setFixedHeight(27)
         #self.label_usuario.setFixedSize(350,35)
-        self.label_ingreso_usuario = QLineEdit()
+        self.label_ingreso_usuario = QLineEdit('leocam10')
         self.label_ingreso_usuario.setStyleSheet("background: #d7d0b7; color : #a9a7a7; font-size : 25px ; border:none ")
         self.label_ingreso_usuario.setAlignment(Qt.AlignmentFlag.AlignLeft )
         #self.label_ingreso_usuario.setFixedHeight(30)
@@ -43,7 +44,7 @@ class Ventana_inicio_sesion(QMainWindow):
         self.label_contrasena.setStyleSheet("color :#a9a7a7; font-size : 25px  ") 
         self.label_contrasena.setFixedHeight(27)  
         #self.label_contrasena.setFixedSize(385,35)
-        self.label_ingreso_contrasena = QLineEdit()
+        self.label_ingreso_contrasena = QLineEdit('sipa2025')
         self.label_ingreso_contrasena.setStyleSheet("background: #d7d0b7;color :#a9a7a7; font-size : 25px  ;border:none  ")
         self.label_ingreso_contrasena.setAlignment(Qt.AlignmentFlag.AlignLeft )
         self.label_ingreso_contrasena.setPlaceholderText('Ingresá tu contraseña')
@@ -59,7 +60,8 @@ class Ventana_inicio_sesion(QMainWindow):
         self.label_olvido_contrasena.setFixedHeight(35)
         #self.label_olvido_contrasena.setFixedSize(520,35) 
         self.boton_iniciar_sesion = QPushButton('Iniciar sesión',self)
-        self.boton_iniciar_sesion.setFixedSize(300,50)       
+        self.boton_iniciar_sesion.setFixedSize(300,50)    
+        self.boton_iniciar_sesion.clicked.connect(controlador.validar_entrada)   
 
         self.boton_iniciar_sesion.setStyleSheet("background: #3391df;color: white;font-size: 18px;padding: 10px 20px")                            
          
@@ -115,8 +117,9 @@ class Ventana_inicio_sesion(QMainWindow):
         self.setCentralWidget(self.central_widget)
         self.central_widget.setStyleSheet(""" QWidget {
                 background: #d7d0b7""")
-        
+"""        
 app = QApplication([])
 window = Ventana_inicio_sesion()
 window.show()
 app.exec()
+"""
