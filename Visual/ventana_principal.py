@@ -148,7 +148,7 @@ class Ventana_Principal(QMainWindow):
             self.boton_primer_contenedor_bajo_2.setIcon(QIcon(self.imagen_boton_primer_contenedor_bajo_2))
             self.boton_primer_contenedor_bajo_2.setIconSize(self.boton_primer_contenedor_bajo_1.size())
                                                             
-            self.label_primer_contenedor_bajo_2 = QLabel("Vencimientos")
+            self.label_primer_contenedor_bajo_2 = QLabel("Certificados")
             self.label_primer_contenedor_bajo_2.setStyleSheet('color : white;background: black; font-size : 25px')
             self.label_primer_contenedor_bajo_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
             self.label_primer_contenedor_bajo_2.setFixedSize(180,50)

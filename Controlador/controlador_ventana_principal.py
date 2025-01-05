@@ -12,8 +12,8 @@ class Controlar_ventana_principal:
         self.__vista.show()
         self.__vista.label_horizonta_arriba_4.clicked.connect(self.cerrar_sesion)
         
-    def cerrar_sesion(self):
         
+    def cerrar_sesion(self):
         self.ventana = Controlador.controlador_inicio_sesion.Controlador_inicio_sesion()
         self.__vista.close()
         
