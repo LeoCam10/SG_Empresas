@@ -2,13 +2,14 @@ from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
 
-import Controlador.controlador_ventana_principal
+#import Controlador.controlador_ventana_principal
 
 
 class Ventana_Principal(QMainWindow):
     def __init__(self,controlador,nombre):
         super().__init__()
         self.nombre = nombre
+        self.controlador = controlador
         self.setWindowTitle('Ventana Principal')
         self.setFixedSize(1200,600)
         
@@ -70,7 +71,7 @@ class Ventana_Principal(QMainWindow):
         #############################
         self.stacked_layout = QStackedLayout()
         self.crear_pantalla_inicio()
-        self.crear_pantalla_empresas()
+        #self.crear_pantalla_empresas()
         self.crear_pantalla_vencimientos()
         self.crear_pantalla_historial()
         self.crear_pantalla_personal()
@@ -87,7 +88,7 @@ class Ventana_Principal(QMainWindow):
         self.setCentralWidget(self.central_widget)
         self.central_widget.setStyleSheet(""" QWidget {
                 background-color: #FFFFFF; border: none }""")
-        
+    """    
     def crear_pantalla_empresas(self):
             self.contenedor_empresa = QVBoxLayout()
             self.boton_empresa =QPushButton('Seccion Empresa')           
@@ -95,7 +96,7 @@ class Ventana_Principal(QMainWindow):
             self.widget_1 = QWidget()
             self.widget_1.setLayout(self.contenedor_empresa)
             self.stacked_layout.addWidget(self.widget_1)
-            
+    """        
     def crear_pantalla_vencimientos(self):
             self.contenedor_vencimientos = QVBoxLayout()
             self.boton_vencimientos =QPushButton('Seccion vencimientos')           
@@ -125,7 +126,8 @@ class Ventana_Principal(QMainWindow):
             self.boton_primer_contenedor_bajo_1.setFixedSize(180,150)
             self.boton_primer_contenedor_bajo_1.setStyleSheet("""QPushButton { background: white; padding: 0px} QPushButton:hover {  border: 3px solid blue}  """)
             self.imagen_boton_primer_contenedor_bajo_1 = QPixmap((r"C:\Users\camus\Desktop\SG_Empresas-main\Visual\Imagenes\empresas")).scaled(QSize(170,120))
-            self.boton_primer_contenedor_bajo_1.clicked.connect((lambda: self.cambiar_pantalla(1)))
+            #self.boton_primer_contenedor_bajo_1.clicked.connect((lambda: self.cambiar_pantalla(1)))
+            self.boton_primer_contenedor_bajo_1.clicked.connect(self.controlador.cambio_a_personal)
             self.boton_primer_contenedor_bajo_1.setIcon(QIcon(self.imagen_boton_primer_contenedor_bajo_1))
             self.boton_primer_contenedor_bajo_1.setIconSize(self.boton_primer_contenedor_bajo_1.size())
             

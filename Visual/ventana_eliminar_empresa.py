@@ -2,11 +2,11 @@ from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
 
-class Ventana_agregar_usuario(QMainWindow):
+class Ventana_eliminar_empresa(QMainWindow):
     def __init__(self):
         super().__init__()
         
-        self.setWindowTitle(' ')
+        self.setWindowTitle('Ventana eliminar empresa')
         self.setFixedSize(600,600)
         self.contenedor_principal = QVBoxLayout()
         self.formulario = QFormLayout()
@@ -135,7 +135,3 @@ class Ventana_agregar_usuario(QMainWindow):
  
  
                 
-app  = QApplication([])
-window = Ventana_agregar_usuario()
-window.show()
-app.exec()

@@ -4,7 +4,7 @@ sys.path.append(r"C:\Users\camus\Desktop\SG_Empresas-main\Modelo")
 
 from Modelo.usuarioDAO import UsuarioDAO
 from Modelo.usuario import Usuario
-from Controlador.controlador_ventana_principal import Controlar_ventana_principal
+from Controlador.controlador_ventana_principal import Controlador_ventana_principal
 from Visual.ventana_inicio_sesion import Ventana_inicio_sesion
 
 class Controlador_inicio_sesion:
@@ -29,7 +29,7 @@ class Controlador_inicio_sesion:
         print(valido)
         if valido:
                 self.usuario_logueado = Usuario(resultado)
-                self.inicio = Controlar_ventana_principal(self,"leonardo")
+                self.inicio = Controlador_ventana_principal(self,"leonardo")
                 return self.__vista.close()
         else:
             print(f'error al iniciar sesion')
