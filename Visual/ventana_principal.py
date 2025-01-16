@@ -127,7 +127,7 @@ class Ventana_Principal(QMainWindow):
             self.boton_primer_contenedor_bajo_1.setStyleSheet("""QPushButton { background: white; padding: 0px} QPushButton:hover {  border: 3px solid blue}  """)
             self.imagen_boton_primer_contenedor_bajo_1 = QPixmap((r"C:\Users\camus\Desktop\SG_Empresas-main\Visual\Imagenes\empresas")).scaled(QSize(170,120))
             #self.boton_primer_contenedor_bajo_1.clicked.connect((lambda: self.cambiar_pantalla(1)))
-            self.boton_primer_contenedor_bajo_1.clicked.connect(self.controlador.cambio_a_personal)
+            self.boton_primer_contenedor_bajo_1.clicked.connect(self.controlador.cambio_a_empresa)
             self.boton_primer_contenedor_bajo_1.setIcon(QIcon(self.imagen_boton_primer_contenedor_bajo_1))
             self.boton_primer_contenedor_bajo_1.setIconSize(self.boton_primer_contenedor_bajo_1.size())
             
@@ -147,6 +147,7 @@ class Ventana_Principal(QMainWindow):
             self.boton_primer_contenedor_bajo_2.setStyleSheet("""QPushButton { background: white; padding: 0px} QPushButton:hover {  border: 3px solid blue}  """)
             self.boton_primer_contenedor_bajo_2.clicked.connect((lambda: self.cambiar_pantalla(2)))
             self.imagen_boton_primer_contenedor_bajo_2 = QPixmap((r"C:\Users\camus\Desktop\SG_Empresas-main\Visual\Imagenes\vencimientos")).scaled(QSize(170,120))
+            self.boton_primer_contenedor_bajo_2.clicked.connect(self.controlador.cambio_a_vencimiento)
             self.boton_primer_contenedor_bajo_2.setIcon(QIcon(self.imagen_boton_primer_contenedor_bajo_2))
             self.boton_primer_contenedor_bajo_2.setIconSize(self.boton_primer_contenedor_bajo_1.size())
                                                             

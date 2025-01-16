@@ -134,4 +134,4 @@ class Ventana_eliminar_empresa(QMainWindow):
  
  
  
-                
+               

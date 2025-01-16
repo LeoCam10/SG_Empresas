@@ -2,23 +2,23 @@
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
-class Ventana_empresa(QMainWindow):
+class Ventana_venicimiento(QMainWindow):
     def __init__(self):
         super().__init__()
         
-        self.setWindowTitle('Ventana Empresas')
+        self.setWindowTitle('Ventana Vencimiento')
         self.setFixedSize(1200,600)
         self.contenedor_principal = QHBoxLayout()
         self.contenedor_1 = QVBoxLayout()
         self.contenedor_2= QVBoxLayout()
       
         self.tabla_empresa = QTableWidget()
-        self.tabla_empresa.setColumnCount(10)
+        self.tabla_empresa.setColumnCount(13)
         self.tabla_empresa.setRowCount(10)
-        self.tabla_empresa.setHorizontalHeaderLabels(['nro_habilitacion', 'nombre', 'tipo_empresa', 'cuit', 'direccion', 'telefono', 'email', 'apoderado', 'dni', 'legajo'])
+        self.tabla_empresa.setHorizontalHeaderLabels(['nro_habilitacion', 'certificado', 'fecha_validez', 'fecha_inicio_primera', 'fecha_fin_primera', 'funcionario_firma_primera', 'fecha_inicio_segunda', 'fecha_fin_segunda', 'funcionario_firma_segunda', 'observaciones_trabajo', 'legajo', 'inspeccion_primera', 'inspeccion_segunda'])
         num_columnas = self.tabla_empresa.columnCount()
         for i in range(num_columnas):
-            self.tabla_empresa.setColumnWidth(i, 100)  # Establecer el ancho fijo
+            self.tabla_empresa.setColumnWidth(i, 80)  # Establecer el ancho fijo
             self.tabla_empresa.horizontalHeader().setSectionResizeMode(i, QHeaderView.ResizeMode.Fixed)
         
         

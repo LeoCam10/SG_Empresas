@@ -100,8 +100,9 @@ class Ventana_inicio_sesion(QMainWindow):
         self.contenedor_login.addWidget(self.label_ingreso_usuario)
         self.contenedor_login.addWidget(self.label_contrasena)
         self.contenedor_login.addWidget(self.label_ingreso_contrasena)
-        self.contenedor_login.addWidget(self.label_olvido_contrasena)
+       # self.contenedor_login.addWidget(self.label_olvido_contrasena)
         self.contenedor_login.addWidget(self.boton_iniciar_sesion)
+        self.contenedor_login.addWidget(self.label_olvido_contrasena)
         #self.contenedor_login.addItem(self.spacer)
         
         

@@ -2,7 +2,7 @@ import sys
 sys.path.append('C://Users//camus//Desktop//SG_Empresas-main//Modelo')
 from base_de_datos import BaseDeDatos
 
-class empresaDao:
+class EmpresaDAO:
     def __init__(self):
         self.base = BaseDeDatos()
         
@@ -12,6 +12,8 @@ class empresaDao:
         valores = (nro_habilitacion, nombre, tipo_empresa, cuit, direccion, telefono, email, nombre_apoderado, dni_apoderado, legajo)
         self.base.consulta(consulta, valores)
         print(f'se agrego la empresa {nombre} a la base de datos')
+        
+    
 
     def eliminar_empresa(self, nro_habilitacion):
         consulta = '''
@@ -44,11 +46,16 @@ class empresaDao:
         SELECT * FROM public.empresa;
         '''
         resultado =self.base.obtener_elementos(consulta,valores=None)
-        print(resultado)
-        
-empresa = empresaDao()
-#empresa.agregar_empresa('A-42', 'Amarras S.A', 1, '30-67030271-3', 'AV. LAS TONINAS N°887 - COMODORO RIVADAVIA - PROVINCIA DEL CHUBUT', '0297-6239058', 'osvaldonunez@amarras.com.ar', 'NUÑEZ NORBERTO OSVALDO', 25011157, 6619)
-#empresa.eliminar_empresa('A-42')
-#empresa.modficar_empresa('A-42', 'Amarras S.R.L', 1, '30-67030271-3', 'AV. LAS TONINAS N°887 - COMODORO RIVADAVIA - PROVINCIA DEL CHUBUT', '0297-6239058', 'osvaldonunez@amarras.com.ar', 'NUÑEZ NORBERTO OSVALDO', 25011157, 6619)
-#empresa.obtener_empresa('A-42')
-#empresa.obtener_empresas()
+
+        return resultado
+    
+    def obtener_tipo_empresas(self):
+        consulta = '''
+        SELECT * FROM public.tipo_empresa;
+        '''
+        resultado =self.base.obtener_elementos(consulta,valores=None)
+        return resultado
+    
+empresa = EmpresaDAO()
+empres = empresa.obtener_tipo_empresas()
+print(empres)
